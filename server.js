@@ -30,7 +30,9 @@ app.get('/help',(req,res)=>{
     })
 })
 app.get('*',(req,res)=>{
-    res.send('<h1>404 error page not found</h1>')
+    res.render("404",{
+        title : "404 Error"
+    })
 })
 
 app.listen(3000,()=>{
