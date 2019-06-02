@@ -10,7 +10,27 @@ hbs.registerPartials(PathPartials)
 
 
 app.get('/',(req,res)=>{
-    res.render("index")
+    res.render("index",{
+        title : "home page"
+    })
+})
+app.get('/about',(req,res)=>{
+    res.render("about",{
+        title : "About page"
+    })
+})
+app.get('/contact',(req,res)=>{
+    res.render("contact",{
+        title : "Contact page"
+    })
+})
+app.get('/help',(req,res)=>{
+    res.render("help",{
+        title : "Help page"
+    })
+})
+app.get('*',(req,res)=>{
+    res.send('<h1>404 error page not found</h1>')
 })
 
 app.listen(3000,()=>{
